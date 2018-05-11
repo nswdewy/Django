@@ -21,6 +21,9 @@ favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^favicon\.ico$', favicon_view),
     url(r'^user/', include('df_user.urls')),
-    url(r'^favicon\.ico$', favicon_view)
+    url(r'^', include('df_goods.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
+
 ]
